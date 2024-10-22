@@ -6,7 +6,7 @@ import { Doctors } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { formatDateTime } from "@/lib/utils";
 import { getPatient, getUser } from "@/lib/actions/patient.actions";
-import  * as Sentry from '@sentry/nextjs'
+// import  * as Sentry from '@sentry/nextjs'
  
 const RequestSuccess = async ({
   searchParams,
@@ -19,7 +19,7 @@ const RequestSuccess = async ({
     (doctor) => doctor.name === appointment.primaryPhysician
   );
   const user = await getUser(userId);
-  Sentry.metrics.set("user_view_new_appointment-success", user.name); 
+  // Sentry.metrics.set("user_view_new_appointment-success", user.name); 
 
   return (
     <div className=" flex h-screen max-h-screen px-[5%]">
